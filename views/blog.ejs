@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+<section id="blog-frame" class="container">
+    <div id="buttons">
+        <button id="create-post">Create post</button>
+        <button id="delete-post">Delete post</button>
+    </div> 
+    <div class="news-catalogue">
+        <% posts.forEach(post => { %> 
+            <div class="article-container" data-id="<%= post.id %>">
+                <div>
+                    <img src="../public/images/<%=post.image %>" alt="article image">
+                    <button class="delete-button">Delete</button>
+                </div>
+                <div>
+                    <p><%= post.date %> &#9642;<%= post.author %></p>
+                    <h4 class="title-of-blog"><a class="article-link" href="/blog/<%= post.slug %>" target="_blank"> <%= post.title %> </a></h4>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </section>
+    <%- include("partials/modals.ejs") %>
+<%- include("partials/footer.ejs") %>

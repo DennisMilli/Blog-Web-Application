@@ -1,0 +1,35 @@
+<div id="modal">
+    <div class="modalContent">
+        <div class="carousel-topic mb-4">
+            <h1>Create a New Post</h1>
+            <button class="close-modal">&times;</button>
+        </div>  
+        <form id="post-form" method="POST" enctype="multipart/form-data">
+            <label for="post-title">Title:</label>
+            <input type="text" id="post-title" name="title" required>
+            
+            <label for="post-content">Author:</label>
+            <input type="text" id="post-author" name="author" required>
+
+            <label for="post-content">Content:</label>
+            <textarea id="post-content" name="content" required></textarea>
+
+            <label for="post-image">Upload Image:</label>
+            <input type="file" id="post-image" name="image" accept="image/*" required>
+
+            <button type="submit">Upload blog</button>
+        </form>
+        <div id="error-message"></div>
+    </div>
+</div>
+<div id="confirmationModal">
+    <div class="confirmationModal">
+        <div class="confirmationText">
+            <p>Are you sure you want to delete? </p>
+        </div>
+        <div id="buttons" class="mb-0">
+            <button class="yes-button">Yes</button>
+            <button class="cancel-button">Cancel</button>
+        </div>  
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+<section id="article-frame">
+    <div class="container article-page" data-id="<%= post.id %>" data-likes="<%= post.likes %>" data-slug="<%= post.slug %>">
+        <p class="article-author mt-5"><%= post.date %> &#9642;<%= post.author %></p>
+        <h1 class="title-of-blog my-5"><%= post.title %></h1>
+        <img src="../public/images/<%= post.image %>" alt="article image" class="welcome-image mb-5">
+        <div class="content main-post">
+            <p><%- post.content %></p>
+        </div> 
+    </div>
+    <div class="multipurpose-buttons">
+        <button class="like"><i class="bi bi-heart"></i></button>    
+        <button class="edit"><i class="bi bi-pen"></i></button>    
+        <button class="delete"><i class="bi bi-trash"></i></button>    
+        <button class="share" data-post-slug="<%= post.slug %>"><i class="bi bi-share"></i></button>    
+    </div>
+</section>
+<%- include("partials/modals.ejs") %>
+<%- include("partials/footer.ejs") %>
